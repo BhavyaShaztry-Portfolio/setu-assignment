@@ -273,20 +273,39 @@ Activate it on Windows:
 ```bash
 pip install -r requirements.txt
 ```
+### 4. Set up PostgreSQL
 
-### 4. Configure PostgreSQL
+PostgreSQL is required for local development because the application uses PostgreSQL as its SQL database.
 
-Create a PostgreSQL database named:
+#### Install PostgreSQL
+
+Install PostgreSQL on your system and make sure the PostgreSQL server is running.
+
+During installation:
+
+- Keep the default port as `5432`
+- Set a password for the `postgres` user
+- Remember this password because it is required for the database connection
+
+#### Create the database
+
+Using **pgAdmin**:
+
+1. Open pgAdmin.
+2. Connect to your local PostgreSQL server.
+3. Right-click **Databases**.
+4. Select **Create → Database**.
+5. Set the database name to:
 
 ```text
 setu_payments
-```
 
 Create a `.env` file in the project root:
 
 ```env
 DATABASE_URL=postgresql+psycopg2://postgres:YOUR_PASSWORD@localhost:5432/setu_payments
 ```
+
 
 
 ### 5. Run the application
