@@ -1,0 +1,260 @@
+{
+  "info": {
+    "_postman_id": "bfabbdf9-c213-40cc-8d6e-ed471f7ca45a",
+    "name": "Setu Payment Reconciliation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58526124",
+    "_collection_link": "https://go.postman.co/collection/58526124-bfabbdf9-c213-40cc-8d6e-ed471f7ca45a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST - New Event",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"event_id\": \"postman-demo-event-2026-001\",\r\n  \"event_type\": \"payment_initiated\",\r\n  \"transaction_id\": \"postman-demo-transaction-2026-001\",\r\n  \"merchant_id\": \"postman-demo-merchant-2026\",\r\n  \"merchant_name\": \"Postman Demo Merchant\",\r\n  \"amount\": 1000,\r\n  \"currency\": \"INR\",\r\n  \"timestamp\": \"2026-09-25T10:00:00Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/events",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Reconciliation Discrepancies",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/reconciliation/discrepancies",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "reconciliation",
+            "discrepancies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Transactions (Pagination)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/transactions?page=1&page_size=5",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "transactions"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "page_size",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Transactions (Merchant Filter)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/transactions?merchant_id=merchant_2&page=1&page_size=5",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "transactions"
+          ],
+          "query": [
+            {
+              "key": "merchant_id",
+              "value": "merchant_2"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "page_size",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Transactions (Status Filter)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/transactions?status=processed&page=1&page_size=5",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "transactions"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "processed"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "page_size",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Transactions (Date Filter)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/transactions?start_date=2026-01-01&end_date=2026-01-31&page=1&page_size=5",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "transactions"
+          ],
+          "query": [
+            {
+              "key": "start_date",
+              "value": "2026-01-01"
+            },
+            {
+              "key": "end_date",
+              "value": "2026-01-31"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "page_size",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Transaction Detail",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/transactions/7f7a2132-630c-48ac-ad75-026f9ecf36fe",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "transactions",
+            "7f7a2132-630c-48ac-ad75-026f9ecf36fe"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Reconciliation Summary",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://setu-assignment-dsci.onrender.com/reconciliation/summary",
+          "protocol": "https",
+          "host": [
+            "setu-assignment-dsci",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "reconciliation",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
